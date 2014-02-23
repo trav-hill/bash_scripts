@@ -5,7 +5,7 @@
 # Simple list display exercise
 i=1
 test_list="$@"
-if [ "$test_list" == "" ];
+if [ -z "$test_list" ];
   then
     echo "No list entries rec'd. Exiting..."
 else
