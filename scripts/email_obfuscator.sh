@@ -1,7 +1,7 @@
-#!/bin/sh
-#
+#!/bin/bash
+# Createdby: Travis Hill
 # 
-#
+# Coding exercise - redact email add. from a list of files
 #
 Pathing="$@"
 if Filelist=`ls $Pathing*.txt 2>"$Pathing"redact-error.log`; then
