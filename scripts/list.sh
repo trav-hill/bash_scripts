@@ -1,5 +1,11 @@
+#!/bin/sh
+# 
+# createdby: Travis Hill
+#
+# Simple list display exercise
 i=1
-for name in list test day mark name
+test_list="$@"
+for names in $test_list
 do
- echo "value $((i++)) :  $name"
+ echo "value $((i++)) :  $names"
 done
