@@ -16,5 +16,17 @@ rm -f develop.zip
 cd /var/www/edos.io
 composer install
 chmod apache:apache -R app/storage
-echo -e "<VirtualHost *:80> \n  ServerName yoursite.com \n  DocumentRoot /var/www/yoursite/public \n\n  <Directory /var/www/yoursite/public> \n    <IfModule mod_rewrite.c>\n    Options -MultiViews\n    RewriteEngine On\n    RewriteCond %{REQUEST_FILENAME} !-f\n    RewriteRule ^ index.php [L]\n   </IfModule>\n</Directory>\n</VirtualHost>" >> <VirtualHost *:80> >> /etc/httpd/conf/httpd.conf
+echo "<VirtualHost *:80>
+   ServerName edos.io
+   DocumentRoot /var/www/edos.io/public
+
+   <Directory /var/www/edos.io/public>
+    <IfModule mod_rewrite.c>
+    Options -MultiViews
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f 
+    RewriteRule ^ index.php [L]
+   </IfModule>
+</Directory>
+</VirtualHost>" >> /etc/httpd/conf/httpd.conf
 service httpd restart
