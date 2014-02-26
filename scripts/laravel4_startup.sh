@@ -7,7 +7,6 @@ service httpd start
 service mysqld start
 chkconfig httpd on
 chkconfig mysqld on
-cd /tmp
 curl -k -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/sbin/composer
 wget https://github.com/laravel/laravel/archive/develop.zip
